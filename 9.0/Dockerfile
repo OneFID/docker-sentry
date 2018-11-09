@@ -84,6 +84,9 @@ RUN mkdir -p $SENTRY_CONF && mkdir -p $SENTRY_FILESTORE_DIR
 COPY sentry.conf.py /etc/sentry/
 COPY config.yml /etc/sentry/
 
+# Install mattermost plugin
+RUN pip install sentry-mattermost
+
 COPY docker-entrypoint.sh /entrypoint.sh
 
 EXPOSE 9000
